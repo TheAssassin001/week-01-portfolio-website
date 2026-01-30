@@ -4,182 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <style>
-        html {
-            box-sizing: border-box;
-        }
-        *, *:before, *:after {
-            box-sizing: inherit;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #eaf6ff;
-            color: #1a237e;
-        }
-        header, nav, main, section, footer {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 1em;
-        }
-        header {
-            background: #2196f3;
-            color: #fff;
-            text-align: center;
-            border-radius: 0 0 12px 12px;
-        }
-        .navbar {
-            background: #bbdefb;
-            margin-bottom: 1em;
-            border-radius: 8px;
-            padding: 0.5em 1em;
-        }
-        .nav-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 1.5em;
-        }
-        .nav-item {
-            margin: 0;
-        }
-        .nav-link {
-            text-decoration: none;
-            color: #1565c0;
-            font-weight: bold;
-            padding: 0.5em 1em;
-            border-radius: 4px;
-            transition: background 0.2s;
-        }
-        .nav-link:hover, .nav-link:focus {
-            background: #e3f2fd;
-        }
-        main {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            padding: 1.5em 1em;
-        }
-        section {
-            margin-bottom: 2em;
-        }
-        /* Projects grid styling (for projects.html) */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5em;
-            padding: 0;
-        }
-        .project-card {
-            background: #e3f2fd;
-            border-radius: 10px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            padding: 1em;
-        }
-        .project-image {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            background: #bbdefb;
-            border-radius: 8px;
-            margin-bottom: 1em;
-        }
-        .project-title {
-            margin: 0 0 0.5em 0;
-            font-size: 1.2em;
-            color: #0d47a1;
-        }
-        .project-description {
-            color: #555;
-            margin-bottom: 1em;
-        }
-        .project-link {
-            align-self: flex-start;
-            text-decoration: none;
-            color: #fff;
-            background: #1976d2;
-            padding: 0.5em 1em;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background 0.2s;
-        }
-        .project-link:hover {
-            background: #1565c0;
-        }
-        /* Contact form styling (for contact.html) */
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-            margin-top: 2em;
-        }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-        label {
-            margin-bottom: 0.5em;
-            font-weight: bold;
-        }
-        input, textarea {
-            padding: 0.7em;
-            border: 1px solid #90caf9;
-            border-radius: 4px;
-            font-size: 1em;
-            background: #e3f2fd;
-            color: #0d47a1;
-        }
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        button[type="submit"] {
-            background: #1976d2;
-            color: #fff;
-            border: none;
-            padding: 0.8em 1.5em;
-            border-radius: 4px;
-            font-size: 1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        button[type="submit"]:hover {
-            background: #1565c0;
-        }
-        .form-message {
-            color: #d00;
-            font-size: 0.95em;
-        }
-        footer {
-            text-align: center;
-            color: #1976d2;
-            font-size: 0.9em;
-            background: #bbdefb;
-            border-top: 1px solid #90caf9;
-            border-radius: 12px 12px 0 0;
-            margin-top: 2em;
-        }
-        /* Responsive: larger screens */
-        @media (min-width: 700px) {
-            header, nav, main, section, footer {
-                max-width: 1000px;
-            }
-            .projects-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            main {
-                padding: 2em 3em;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="assetes/style.css">
 </head>
 <body>
     <header>
@@ -223,30 +48,18 @@
         &copy; 2026 My Portfolio. All rights reserved.
     </footer>
     <script>
-    // Active section highlight for nav
+    // Nav highlight for Home page and smooth scroll
     document.addEventListener('DOMContentLoaded', function () {
         const navLinks = document.querySelectorAll('.nav-link');
-        const sections = [
-            {id: 'home', link: navLinks[0]},
-            {id: 'skills', link: navLinks[1]},
-        ];
-        function onScroll() {
-            let scrollPos = window.scrollY || window.pageYOffset;
-            let offset = 80;
-            let found = false;
-            for (let i = 0; i < sections.length; i++) {
-                const section = document.getElementById(sections[i].id);
-                if (section && section.offsetTop - offset <= scrollPos) {
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    sections[i].link.classList.add('active');
-                    found = true;
-                }
+        // Highlight Home nav
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === 'index.html') {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
             }
-            if (!found) navLinks.forEach(l => l.classList.remove('active'));
-        }
-        window.addEventListener('scroll', onScroll);
-        onScroll();
-        // Smooth scroll for nav links
+        });
+        // Smooth scroll for anchor links (if any)
         navLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');

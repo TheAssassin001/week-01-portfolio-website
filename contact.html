@@ -4,113 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #eaf6ff;
-            color: #1a237e;
-        }
-        header, nav, main, section, footer {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 1em;
-        }
-        header {
-            background: #2196f3;
-            color: #fff;
-            text-align: center;
-            border-radius: 0 0 12px 12px;
-            box-shadow: 0 2px 8px rgba(33,150,243,0.10);
-        }
-        nav {
-            background: #bbdefb;
-            margin-bottom: 1em;
-            border-radius: 8px;
-            padding: 0.5em 1em;
-        }
-        .navbar .nav-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 2em;
-        }
-        .navbar .nav-link {
-            text-decoration: none;
-            color: #1565c0;
-            font-weight: bold;
-            padding: 0.5em 1em;
-            border-radius: 4px;
-            transition: background 0.2s, color 0.2s;
-        }
-        .navbar .nav-link:hover, .navbar .nav-link:focus {
-            background: #e3f2fd;
-            color: #0d47a1;
-        }
-        .navbar .nav-link.active {
-            background: #1976d2;
-            color: #fff;
-        }
-        main {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(33,150,243,0.08);
-        }
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-            margin-top: 2em;
-        }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-        label {
-            margin-bottom: 0.5em;
-            font-weight: bold;
-            color: #1976d2;
-        }
-        input, textarea {
-            padding: 0.7em;
-            border: 1px solid #90caf9;
-            border-radius: 4px;
-            font-size: 1em;
-            background: #e3f2fd;
-            color: #0d47a1;
-        }
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        button[type="submit"] {
-            background: #1976d2;
-            color: #fff;
-            border: none;
-            padding: 0.8em 1.5em;
-            border-radius: 4px;
-            font-size: 1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        button[type="submit"]:hover {
-            background: #1565c0;
-        }
-        .form-message {
-            color: #d00;
-            font-size: 0.95em;
-        }
-        footer {
-            text-align: center;
-            color: #1976d2;
-            font-size: 0.9em;
-            background: #bbdefb;
-            border-top: 1px solid #90caf9;
-        }
-    </style>
+    <link rel="stylesheet" href="assetes/style.css">
 </head>
 <body>
     <header>
@@ -144,11 +38,37 @@
         </section>
     </main>
     <footer>
-        &copy; 2026 My Portfolio. All rights reserved.
+        &copy; 2026 My Portfolio. All rights reserved;
     </footer>
     <script>
-    // Contact form validation and dummy submit
+    // Contact form validation and dummy submit, plus nav highlight
     document.addEventListener('DOMContentLoaded', function () {
+        // Nav highlight
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === 'contact.html') {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+        // Smooth scroll for anchor links (if any)
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 60,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        // Contact form validation
         const form = document.getElementById('contactForm');
         const formMessage = document.getElementById('formMessage');
         form.addEventListener('submit', function (e) {
