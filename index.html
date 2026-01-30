@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #eaf6ff;
+            color: #1a237e;
+        }
+        header, nav, main, section, footer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1em;
+        }
+        header {
+            background: #2196f3;
+            color: #fff;
+            text-align: center;
+            border-radius: 0 0 12px 12px;
+        }
+        .navbar {
+            background: #bbdefb;
+            margin-bottom: 1em;
+            border-radius: 8px;
+            padding: 0.5em 1em;
+        }
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 1.5em;
+        }
+        .nav-item {
+            margin: 0;
+        }
+        .nav-link {
+            text-decoration: none;
+            color: #1565c0;
+            font-weight: bold;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .nav-link:hover, .nav-link:focus {
+            background: #e3f2fd;
+        }
+        main {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 1.5em 1em;
+        }
+        section {
+            margin-bottom: 2em;
+        }
+        /* Projects grid styling (for projects.html) */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5em;
+            padding: 0;
+        }
+        .project-card {
+            background: #e3f2fd;
+            border-radius: 10px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
+        }
+        .project-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background: #bbdefb;
+            border-radius: 8px;
+            margin-bottom: 1em;
+        }
+        .project-title {
+            margin: 0 0 0.5em 0;
+            font-size: 1.2em;
+            color: #0d47a1;
+        }
+        .project-description {
+            color: #555;
+            margin-bottom: 1em;
+        }
+        .project-link {
+            align-self: flex-start;
+            text-decoration: none;
+            color: #fff;
+            background: #1976d2;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .project-link:hover {
+            background: #1565c0;
+        }
+        /* Contact form styling (for contact.html) */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            margin-top: 2em;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+        input, textarea {
+            padding: 0.7em;
+            border: 1px solid #90caf9;
+            border-radius: 4px;
+            font-size: 1em;
+            background: #e3f2fd;
+            color: #0d47a1;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        button[type="submit"] {
+            background: #1976d2;
+            color: #fff;
+            border: none;
+            padding: 0.8em 1.5em;
+            border-radius: 4px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button[type="submit"]:hover {
+            background: #1565c0;
+        }
+        .form-message {
+            color: #d00;
+            font-size: 0.95em;
+        }
+        footer {
+            text-align: center;
+            color: #1976d2;
+            font-size: 0.9em;
+            background: #bbdefb;
+            border-top: 1px solid #90caf9;
+            border-radius: 12px 12px 0 0;
+            margin-top: 2em;
+        }
+        /* Responsive: larger screens */
+        @media (min-width: 700px) {
+            header, nav, main, section, footer {
+                max-width: 1000px;
+            }
+            .projects-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            main {
+                padding: 2em 3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+    </header>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>About Me</h2>
+            <div style="display: flex; align-items: center; gap: 1.5em; flex-wrap: wrap;">
+                <img src="assetes/Aswin.jpeg" alt="Aswin K Jayan" style="width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 3px solid #2196f3; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <div>
+                    <h3 style="margin: 0 0 0.5em 0; color: #1565c0;">Aswin K Jayan</h3>
+                    <p>I’m Aswin K Jayan, a developer who likes building things that actually work, not just look good on a screen.</p>
+                    <p>I’m currently studying BCA, freelancing on the side, and interning with a software lab. I work comfortably across the full stack, and I enjoy the messy middle of development: debugging, refining logic, and making systems more reliable.</p>
+                    <p>I’ve worked with real clients, tight timelines, and imperfect requirements, which taught me how to ship, adapt fast, and communicate clearly. I’m especially interested in building scalable web platforms, problem-solving through code, and growing projects beyond the “just a college project” stage.</p>
+                    <p>Outside of work, I’m focused on getting better, technically and personally. I value consistency, ownership, and learning by doing. If there’s a problem to solve or a product to improve, I’m in.</p>
+                </div>
+            </div>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>C</li>
+                <li>C++</li>
+                <li>Responsive Design</li>
+                <li>Git & Version Control</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        &copy; 2026 My Portfolio. All rights reserved.
+    </footer>
+    <script>
+    // Active section highlight for nav
+    document.addEventListener('DOMContentLoaded', function () {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = [
+            {id: 'home', link: navLinks[0]},
+            {id: 'skills', link: navLinks[1]},
+        ];
+        function onScroll() {
+            let scrollPos = window.scrollY || window.pageYOffset;
+            let offset = 80;
+            let found = false;
+            for (let i = 0; i < sections.length; i++) {
+                const section = document.getElementById(sections[i].id);
+                if (section && section.offsetTop - offset <= scrollPos) {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    sections[i].link.classList.add('active');
+                    found = true;
+                }
+            }
+            if (!found) navLinks.forEach(l => l.classList.remove('active'));
+        }
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+        // Smooth scroll for nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 60,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>

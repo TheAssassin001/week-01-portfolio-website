@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #eaf6ff;
+            color: #1a237e;
+        }
+        header, nav, main, section, footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1em;
+        }
+        header {
+            background: #2196f3;
+            color: #fff;
+            text-align: center;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 2px 8px rgba(33,150,243,0.10);
+        }
+        nav {
+            background: #bbdefb;
+            margin-bottom: 1em;
+            border-radius: 8px;
+            padding: 0.5em 1em;
+        }
+        .navbar .nav-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+        }
+        .navbar .nav-link {
+            text-decoration: none;
+            color: #1565c0;
+            font-weight: bold;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .navbar .nav-link:hover, .navbar .nav-link:focus {
+            background: #e3f2fd;
+            color: #0d47a1;
+        }
+        .navbar .nav-link.active {
+            background: #1976d2;
+            color: #fff;
+        }
+        main {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2em;
+            padding: 2em 0;
+        }
+        .project-card {
+            background: #e3f2fd;
+            border-radius: 10px;
+            box-shadow: 0 1px 4px rgba(33,150,243,0.10);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background: #bbdefb;
+        }
+        .project-content {
+            padding: 1em;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-title {
+            margin: 0 0 0.5em 0;
+            font-size: 1.2em;
+            color: #0d47a1;
+        }
+        .project-description {
+            flex: 1;
+            color: #1565c0;
+            margin-bottom: 1em;
+        }
+        .project-link {
+            align-self: flex-start !important;
+            text-decoration: none;
+            color: #fff;
+            background: #1976d2;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .project-link:hover {
+            background: #1565c0;
+        }
+        footer {
+            text-align: center;
+            color: #1976d2;
+            font-size: 0.9em;
+            background: #bbdefb;
+            border-top: 1px solid #90caf9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Projects</h1>
+    </header>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="projects-grid">
+            <article class="project-card">
+                <img src="assetes/project_1.png" alt="AKT Practice Screenshot" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">AKT Practice</h2>
+                    <p class="project-description">AKT Practice is a web-based learning platform designed to help GP trainees prepare for the Applied Knowledge Test (AKT). It combines a structured question bank with topic-linked revision guides, allowing users to test knowledge and immediately reinforce learning. The system uses a flexible backend architecture so each question can surface one or more relevant revision guides, enabling scalable content growth without duplication. The platform prioritises clarity, performance, and clinically relevant learning over rote memorisation.</p>
+                   
+                                    <h3 style="margin:0.5em 0 0.2em 0; font-size:1em; color:#333;">My Role</h3>
+                                    <p class="project-description">I worked as the technical implementer and systems integrator. I designed and implemented the database architecture, built the question and revision-guide linking logic, handled Supabase schema design and relationships, and integrated the frontend with the backend. I focused on making the system scalable and flexible so questions can link to multiple revision guides without data duplication, while keeping performance stable.</p>
+                                    <p class="project-description"><strong>Tech used</strong><br>
+                                    Frontend: HTML, CSS, JavaScript<br>
+                                    Backend & database: Supabase (PostgreSQL, REST API)<br>
+                                    Hosting: Vercel<br>
+                                    Version control: GitHub<br>
+                                    Tooling: VS Code, GitHub Copilot, AI-assisted development workflows
+                                    </p>
+                    <a href="https://akt-practice.vercel.app/" class="project-link" target="_blank" rel="noopener">View Project</a>
+                </div>
+            </article>
+            <article class="project-card">
+                <img src="assetes/project_2.png" alt="Barely Soldered Website & Necrowarp Subsite" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">Barely Soldered Website & Necrowarp Subsite</h2>
+                    <p class="project-description">Barely Soldered is an indie game studio website built to showcase the developer and its projects, with dedicated subsites for individual games such as Necrowarp. The site features a dark-fantasy inspired aesthetic, responsive layouts, media galleries, and integrated support/contact systems, all designed to be performant, accessible, and easy to maintain without a traditional backend.</p>
+                    <p class="project-description">The platform was structured to scale as new games are added, with each title receiving its own pages for information, media, and player support. Deployment and hosting are handled via a Git-based workflow with Netlify, enabling fast updates and simple content iteration.</p>
+                    <h3 style="margin:0.5em 0 0.2em 0; font-size:1em; color:#333;">My Role</h3>
+                    <p class="project-description">This was my first real client project, where I was responsible for implementing and deploying the support and contact system across the main site and the Necrowarp subsite. I built multiple Netlify Forms with custom subject routing, ticket ID generation, spam protection, and confirmation pages, while ensuring the system worked correctly across desktop and mobile devices.</p>
+                    <p class="project-description">I also handled real-world debugging and deployment issues, including asset path resolution, mobile browser behavior, and DNS/SSL configuration, and iterated on the UI based on direct client feedback. This project gave me hands-on experience shipping a live production feature while working closely with a client and adapting to evolving requirements.</p>
+                    <p class="project-description"><strong>Tech used</strong> HTML, CSS, JavaScript, Netlify Forms, GitHub, Netlify</p>
+                    <a href="https://barelysolde.red/" class="project-link" target="_blank" rel="noopener">View Project</a>
+                </div>
+            </article>
+            <article class="project-card">
+                <div class="project-image" style="display: flex; gap: 0.5em; background: none;">
+                    <img src="assetes/project_3_a.png" alt="Chinese Language Tutor Platform Screenshot 1" style="width: 50%; height: 160px; object-fit: cover; border-radius: 8px; background: #ddd;">
+                    <img src="assetes/project_3_b.png" alt="Chinese Language Tutor Platform Screenshot 2" style="width: 50%; height: 160px; object-fit: cover; border-radius: 8px; background: #ddd;">
+                </div>
+                <div class="project-content">
+                    <h2 class="project-title">Chinese Language Tutor Platform</h2>
+                    <p class="project-description">A full-stack web platform designed to support Chinese language learning through structured practice, assessments, and tutor oversight. The system allows students to complete quizzes and tests, track their progress, and build learning streaks, while tutors can monitor performance, manage students, and view detailed analytics through a dedicated dashboard. The platform focuses on clarity, usability, and real-time data to support effective teaching and learning.</p>
+                    <h3 style="margin:0.5em 0 0.2em 0; font-size:1em; color:#333;">My Role</h3>
+                    <p class="project-description"><strong>Full-Stack Developer</strong><br>
+                    Designed and implemented the Tutor Dashboard, including student management, analytics, and detailed progress views.<br>
+                    Built secure role-based access control for tutors and students.<br>
+                    Integrated frontend with backend APIs to fetch real-time student performance data.<br>
+                    Implemented critical features such as progress reset, student deletion, and activity tracking.<br>
+                    Debugged and optimized data flow between MongoDB, backend services, and the UI.<br>
+                    Ensured the application is production-ready with proper error handling and state management.
+                    </p>
+                    <p class="project-description"><strong>Tech used</strong> Frontend: HTML5, CSS3, Vanilla JavaScript; Backend: Node.js, Express.js; Database: MongoDB (Mongoose); Authentication & Security: JWT-based authentication, Role-based access control (Tutor / Student); Deployment & Tools: RESTful APIs, supabase, Git & GitHub.</p>
+                    <a href="https://language-tutor-liart.vercel.app/" class="project-link" target="_blank" rel="noopener">View Project</a>
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        &copy; 2026 My Portfolio. All rights reserved.
+    </footer>
+</body>
+</html>
